@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explain-It</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+            <path d="M3.5 9.88a8 8 0 1 0 14.12 0"/>
+            <path d="M12 2v6"/>
+          </svg>
+        </div>
+        <span class="logo-text">Explain-It</span>
+      </div>
+      <div class="version">v1.0</div>
+    </header>
+
+    <!-- Main Action -->
+    <div class="main-action">
+      <button id="capture-btn" class="capture-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 7v6h-6V7z"/>
+          <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/>
+        </svg>
+        <span>Capture Question</span>
+      </button>
+      <p class="capture-hint">Click to start selecting a question area</p>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number" id="explanations-count">0</span>
+        <span class="stat-label">Explanations</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="streak-count">0</span>
+        <span class="stat-label">Day Streak</span>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-section">
+      <button id="settings-btn" class="settings-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+        </svg>
+        <span>GPT Settings</span>
+      </button>
+    </div>
+
+    <!-- Settings Panel (Hidden by default) -->
+    <div id="settings-panel" class="settings-panel hidden">
+      <div class="settings-header">
+        <h3>AI Configuration</h3>
+        <button id="close-settings" class="close-btn">×</button>
+      </div>
+      
+      <div class="setting-group">
+        <label for="api-key">OpenAI API Key</label>
+        <input type="password" id="api-key" placeholder="sk-..." />
+        <small>Your key is stored locally and never shared</small>
+      </div>
+
+      <div class="setting-group">
+        <label for="model-select">AI Model</label>
+        <select id="model-select">
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast)</option>
+          <option value="gpt-4">GPT-4 (Better)</option>
+          <option value="gpt-4-turbo">GPT-4 Turbo (Best)</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label for="explanation-style">Explanation Style</label>
+        <select id="explanation-style">
+          <option value="simple">Simple & Clear</option>
+          <option value="detailed">Detailed</option>
+          <option value="step-by-step">Step-by-Step</option>
+          <option value="beginner">Beginner Friendly</option>
+        </select>
+      </div>
+
+      <button id="save-settings" class="save-button">Save Settings</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <div class="keyboard-shortcut">
+        <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>
+      </div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

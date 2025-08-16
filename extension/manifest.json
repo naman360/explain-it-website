@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "Explain-It",
+  "version": "1.0.0",
+  "description": "AI-powered instant explanations for any question on any website. Perfect for students taking online tests and coding assessments.",
+  
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Explain-It - AI Study Assistant"
+  },
+
+  "background": {
+    "service_worker": "background/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "libs/tesseract.min.js",
+        "content/content.js"
+      ],
+      "css": ["content/content.css"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "https://api.openai.com/*"
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*",
+        "content/*",
+        "libs/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "commands": {
+    "capture-screen": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "Command+Shift+E"
+      },
+      "description": "Start capturing a question area"
+    }
+  }
+}

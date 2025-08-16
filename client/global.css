@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme for Explain-It Chrome Extension
+   * Dark hacker theme with neon accents
+   */
+  :root {
+    /* Dark theme as default */
+    --background: 220 13% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 13% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 13% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 13% 8%;
+
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 220 13% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 220 13% 15%;
+    --input: 220 13% 15%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 13% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 220 13% 8%;
+    --sidebar-accent: 220 13% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 13% 15%;
+    --sidebar-ring: 180 100% 50%;
+
+    /* Custom neon colors */
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 270 100% 50%;
+    --neon-green: 120 100% 50%;
+    --neon-pink: 330 100% 50%;
+
+    /* Dark shades */
+    --dark-950: 220 13% 3%;
+    --dark-900: 220 13% 8%;
+    --dark-800: 220 13% 12%;
+    --dark-700: 220 13% 18%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-700 rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neon-cyan;
+  }
+
+  /* Glow effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--neon-purple) / 0.5);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--neon-green) / 0.5);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.5);
+  }
+
+  /* Cyber grid background */
+  .cyber-bg {
+    background-image: 
+      linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Text effects */
+  .text-neon-glow {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+
+  /* Chrome extension mockup styles */
+  .extension-popup {
+    width: 320px;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-demo {
+    width: 400px;
+    height: 600px;
+    border-radius: 16px 0 0 16px;
+    box-shadow: 
+      -20px 0 40px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+}

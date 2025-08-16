@@ -1,0 +1,17 @@
+# Extension Assets
+
+This folder should contain the extension icons:
+
+- icon-16.png (16x16 pixels)
+- icon-32.png (32x32 pixels) 
+- icon-48.png (48x48 pixels)
+- icon-128.png (128x128 pixels)
+
+For the Explain-It extension, these should be brain/AI-themed icons with the neon cyan color scheme to match the brand.
+
+You can create these icons using:
+1. Design tools like Figma, Sketch, or Canva
+2. Icon generators like Icon Kitchen
+3. AI image generators with prompts like "brain icon, neon cyan, dark background, minimalist"
+
+The icons should be clear and recognizable even at small sizes, maintaining the "smart & sneaky" hacker aesthetic of the extension.
